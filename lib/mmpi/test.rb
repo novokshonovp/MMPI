@@ -1,7 +1,7 @@
 require_relative 'result.rb'
 require 'csv'
 
-module MMPI
+module Mmpi
   class Test
     DATA_STRUCTURE = %i[number question].freeze
 

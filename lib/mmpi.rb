@@ -1,2 +1,2 @@
-require_relative 'MMPI/test'
-require_relative 'MMPI/result'
+require_relative 'mmpi/test'
+require_relative 'mmpi/result'

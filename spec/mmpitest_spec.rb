@@ -1,7 +1,7 @@
 require 'simplecov'
 require_relative '../lib/mmpi'
 
-include MMPI
+include Mmpi
 describe Test do
   context 'when men' do
     let(:test) { Test.new(:men, path_to_mmpi_men_csv) }
