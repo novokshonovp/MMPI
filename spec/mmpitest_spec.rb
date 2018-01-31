@@ -10,7 +10,7 @@ describe Test do
     describe '#get_question' do
       let(:test) { Test.new(:men, './spec/fixtures/q_mmpi_men_ru_one_record.csv') }
       subject { test.get_question }
-      it { is_expected.to eq ['14', 'Номер данного пункта следует обвести кружочком'] }
+      it { is_expected.to eq ({number: '14', question:'Номер данного пункта следует обвести кружочком'}) }
     end
     describe '#put_answer' do
       before { test.put_answer(answer) }
