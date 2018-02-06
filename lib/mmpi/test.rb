@@ -5,7 +5,7 @@ module Mmpi
   class Test
     DATA_STRUCTURE = %i[number question].freeze
 
-    attr_reader :quiz
+    attr_reader :quiz, :gender
     def initialize(gender, path)
       @quiz = {}
       @gender = gender
@@ -32,7 +32,7 @@ module Mmpi
     def finished?
       @quiz.all?{|key,value| value[:is_checked]==true }
     end
-    
+
     def answers
       @quiz.map { |key, value| [key.to_i,value[:answer]]}.to_h
     end
