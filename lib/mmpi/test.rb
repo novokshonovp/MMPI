@@ -32,6 +32,11 @@ module Mmpi
     def finished?
       @quiz.all?{|key,value| value[:is_checked]==true }
     end
+    
+    def answers
+      @quiz.map { |key, value| [key.to_i,value[:answer]]}.to_h
+    end
+
     def render
       return nil if !finished?
       Result.new
