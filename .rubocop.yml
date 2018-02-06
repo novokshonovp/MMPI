@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - spec/**
+Style/CaseEquality:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100
+Documentation:
+  Enabled: false
