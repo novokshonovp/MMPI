@@ -50,3 +50,4 @@ build-iPhoneSimulator/
 .rvmrc
 
 demo.rb
+.byebug_history
