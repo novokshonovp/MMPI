@@ -72,7 +72,7 @@ module Mmpi
     def inspect
       "#<#{self.class.name}:#{object_id}, co: (#{co})"
     end
-
+      
     def scale_k_value(scale_k)
       @scale_k_value = scale_k.send('co')
     end
