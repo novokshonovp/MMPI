@@ -20,7 +20,7 @@ module Mmpi
 
     def get_question
       return nil if finished?
-      question = [unfinished.to_a.sample].to_h.
+      question = [unfinished.to_a.first].to_h.
                   map{ |key, value| [key,value[:ques]]}.first
       {number: question.first, question: question.last}
     end
