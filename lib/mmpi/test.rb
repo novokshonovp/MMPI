@@ -37,11 +37,6 @@ module Mmpi
       @quiz.map { |key, value| [key.to_i,value[:answer]]}.to_h
     end
 
-    def render
-      return nil if !finished?
-      Result.new
-    end
-
     private
 
     def unfinished

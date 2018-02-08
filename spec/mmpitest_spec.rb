@@ -1,4 +1,5 @@
 require 'simplecov'
+SimpleCov.start
 require_relative '../lib/mmpi'
 
 include Mmpi
@@ -12,12 +13,14 @@ describe Test do
       subject { test.get_question }
       it { is_expected.to eq ({number: '14', question:'Номер данного пункта следует обвести кружочком'}) }
     end
+
     describe '#put_answer' do
       before { test.put_answer(answer) }
       let(:answer) { { '14'=> true } }
       it { expect(test.quiz['14'][:answer]).to be true }
       it { expect(test.quiz['14'][:is_checked]).to be true }
     end
+
     describe '#finished?' do
       subject { test.finished? }
       context 'when false' do
@@ -32,22 +35,15 @@ describe Test do
         }
         it { is_expected.to be true }
       end
+    end
 
+    describe '#answers' do
+      let(:test) { Test.new(:men, './spec/fixtures/q_mmpi_men_ru_one_record.csv') }
+      before { test.put_answer(answer) }
+      let(:answer) { { '14'=> true } }
+      subject { test.answers }
+      it { is_expected.to eq ( {14=>true} ) }
     end
-    describe '#render' do
-      subject { test.render }
-      context 'when not finished' do
-        before { test.put_answer( {'14'=> true } ) }
-        it { is_expected.to be_nil}
-      end
-      context 'when finished' do
-        before {
-          test.put_answer( {'14'=> true })
-          test.put_answer( {'15'=> true })
-          test.put_answer( {'16'=> true })
-        }
-        it { is_expected.to be_instance_of(Result) }
-      end
-    end
+
   end
 end

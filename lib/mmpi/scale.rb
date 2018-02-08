@@ -15,7 +15,7 @@ module Mmpi
     require_relative 'scale_0'
     PATH_TO_CONCISE = './data/concise_interpretation.yaml'.freeze
     CORRECTIONS = { Scale_1: 0.5, Scale_4: 0.4, Scale_7: 1, Scale_8: 1, Scale_9: 0.2 }.freeze
-    AVERAGE_DEVIATIONS = { men: { Scale_l: { median: 4.2, sigma: 2.9 },
+    AVERAGE_DEVIATIONS = { male: { Scale_l: { median: 4.2, sigma: 2.9 },
                                   Scale_f: { median: 2.76, sigma: 4.67 },
                                   Scale_k: { median: 12.1, sigma: 5.4 },
                                   Scale_1: { median: 11.1, sigma: 3.9 },
@@ -28,7 +28,7 @@ module Mmpi
                                   Scale_8: { median: 21.96, sigma: 5.0 },
                                   Scale_9: { median: 17.0, sigma: 4.06 },
                                   Scale_0: { median: 25.0, sigma: 10.0 } },
-                           women: {
+                           female: {
                              Scale_l: { median: 4.2, sigma: 2.9 },
                              Scale_f: { median: 2.76, sigma: 4.67 },
                              Scale_k: { median: 12.1, sigma: 5.4 },
@@ -73,14 +73,18 @@ module Mmpi
       "#<#{self.class.name}:#{object_id}, co: (#{co})"
     end
 
+    def scale_k_value(scale_k)
+      @scale_k_value = scale_k.send('co')
+    end
+
     private
+
+    def co
+      significant_answers
+    end
 
     def self.concises
       @concises ||= YAML.load_file('./data/concise_interpretation.yaml')[to_sym]
-    end
-    
-    def co
-      significant_answers
     end
 
     def co_corrected_with_k
