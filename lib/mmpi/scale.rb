@@ -1,4 +1,4 @@
-require_relative 'consts'
+require 'yaml'
 module Mmpi
   class Scale
     Dir['./lib/mmpi/scale_*.rb'].each { |file| require file }

@@ -1,4 +1,5 @@
-require_relative 'consts'
+require_relative 'scales'
+require 'yaml'
 module Mmpi
   class Result
 
