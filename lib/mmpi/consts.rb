@@ -29,4 +29,6 @@ module Consts
                          } }.freeze
     CORRECTIONS = { Scale_1: 0.5, Scale_4: 0.4, Scale_7: 1, Scale_8: 1, Scale_9: 0.2 }.freeze
     PATH_TO_CONCISE = './data/concise_interpretation.yaml'.freeze
+    PATH_TO_KEYS = './data/key_scales.yaml'.freeze
+    PATH_TO_GRAPH_TEMPLATES = './data/graph_templates.yaml'.freeze
 end

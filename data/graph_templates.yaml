@@ -1,0 +1,343 @@
+---
+  :profile_response_1:
+    :name: Стенический тип реагирования
+    :desc_short:
+    :desc_link: Методическое пособие. стр.82
+    :Scales:
+      :Scale_l:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 50
+      :Scale_f:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 45
+      :Scale_k:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 60
+      :Scale_1:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 47
+      :Scale_2:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 45
+      :Scale_3:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 47
+      :Scale_4:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 62
+      :Scale_5:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 57
+      :Scale_6:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 64
+      :Scale_7:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 57
+      :Scale_8:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 60
+      :Scale_9:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 66
+      :Scale_0:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 55
+  :profile_response_2:
+    :name: Гипостенический тип реагирования
+    :desc_short:
+    :desc_link: Методическое пособие. стр.82
+    :Scales:
+      :Scale_l:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 50
+      :Scale_f:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 60
+      :Scale_k:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 55
+      :Scale_1:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 57
+      :Scale_2:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 70
+      :Scale_3:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 55
+      :Scale_4:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 57
+      :Scale_5:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 54
+      :Scale_6:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 60
+      :Scale_7:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 66
+      :Scale_8:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 62
+      :Scale_9:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 52
+      :Scale_0:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 60
+  :profile_response_3:
+    :name: Астенический тип реагирования
+    :desc_short:
+    :desc_link: Методическое пособие. стр.83
+    :Scales:
+      :Scale_l:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 50
+      :Scale_f:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 65
+      :Scale_k:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 52
+      :Scale_1:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 62
+      :Scale_2:
+        :deviation_up: 20
+        :deviation_down: 10
+        :term: 80
+      :Scale_3:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 63
+      :Scale_4:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 56
+      :Scale_5:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 54
+      :Scale_6:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 51
+      :Scale_7:
+        :deviation_up: 20
+        :deviation_down: 3
+        :term: 73
+      :Scale_8:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 62
+      :Scale_9:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 43
+      :Scale_0:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 57
+  :profile_response_4:
+    :name: Гиперстенический тип реагирования
+    :desc_short:
+    :desc_link: Методическое пособие. стр.83
+    :Scales:
+      :Scale_l:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 50
+      :Scale_f:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 65
+      :Scale_k:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 52
+      :Scale_1:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 45
+      :Scale_2:
+        :deviation_up: 20
+        :deviation_down: 10
+        :term: 40
+      :Scale_3:
+        :deviation_up: 3
+        :deviation_down: 3
+        :term: 45
+      :Scale_4:
+        :deviation_up: 20
+        :deviation_down: 5
+        :term: 75
+      :Scale_5:
+        :deviation_up: 5
+        :deviation_down: 10
+        :term: 57
+      :Scale_6:
+        :deviation_up: 20
+        :deviation_down: 5
+        :term: 75
+      :Scale_7:
+        :deviation_up: 5
+        :deviation_down: 10
+        :term: 57
+      :Scale_8:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 70
+      :Scale_9:
+        :deviation_up: 20
+        :deviation_down: 7
+        :term: 77
+      :Scale_0:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 47
+  :profile_1:
+    :name: Профиль №1
+    :desc_short: Результат недостоверен. Почти все ответы верно.
+    :desc_link: Методическое пособие. стр.99
+    :Scales:
+      :Scale_l:
+        :deviation_up: 2
+        :deviation_down: 5
+        :term: 40
+      :Scale_f:
+        :deviation_up: 10
+        :deviation_down: 20
+        :term: 130
+      :Scale_k:
+        :deviation_up: 5
+        :deviation_down: 15
+        :term: 40
+      :Scale_1:
+        :deviation_up: 5
+        :deviation_down: 6
+        :term: 50
+      :Scale_2:
+        :deviation_up: 10
+        :deviation_down: 5
+        :term: 58
+      :Scale_3:
+        :deviation_up: 5
+        :deviation_down: 6
+        :term: 50
+      :Scale_4:
+        :deviation_up: 5
+        :deviation_down: 17
+        :term: 80
+      :Scale_5:
+        :deviation_up: 5
+        :deviation_down: 8
+        :term: 73
+      :Scale_6:
+        :deviation_up: 10
+        :deviation_down: 5
+        :term: 90
+      :Scale_7:
+        :deviation_up: 11
+        :deviation_down: 5
+        :term: 73
+      :Scale_8:
+        :deviation_up: 21
+        :deviation_down: 5
+        :term: 105
+      :Scale_9:
+        :deviation_up: 5
+        :deviation_down: 6
+        :term: 100
+      :Scale_0:
+        :deviation_up: 10
+        :deviation_down: 1
+        :term: 60
+  :profile_2:
+    :name: Профиль №2
+    :desc_short: Результат недостоверен. Почти все ответы неверно
+    :desc_link: Методическое пособие. стр.99
+    :Scales:
+      :Scale_l:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 88
+      :Scale_f:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 88
+      :Scale_k:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 80
+      :Scale_1:
+        :deviation_up: 8
+        :deviation_down: 5
+        :term: 108
+      :Scale_2:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 108
+      :Scale_3:
+        :deviation_up: 10
+        :deviation_down: 5
+        :term: 100
+      :Scale_4:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 100
+      :Scale_5:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 72
+      :Scale_6:
+        :deviation_up: 5
+        :deviation_down: 5
+        :term: 71
+      :Scale_7:
+        :deviation_up: 5
+        :deviation_down: 20
+        :term: 100
+      :Scale_8:
+        :deviation_up: 10
+        :deviation_down: 10
+        :term: 100
+      :Scale_9:
+        :deviation_up: 5
+        :deviation_down: 10
+        :term: 60
+      :Scale_0:
+        :deviation_up: 8
+        :deviation_down: 5
+        :term: 53
