@@ -2,9 +2,10 @@ require 'yaml'
 module Mmpi
   class Scale
     Dir['./lib/mmpi/scale_*.rb'].each { |file| require file }
+
     SUPPORTED_SCALES = [Scale_q, Scale_l, Scale_f, Scale_k, Scale_1, Scale_2,
                         Scale_3, Scale_4, Scale_5, Scale_6, Scale_7, Scale_8,
-                        Scale_9, Scale_0]
+                        Scale_9, Scale_0].freeze
     attr_accessor :scale_k_value
     def initialize(keys, answers, gender)
       @scale_k_value = 0
@@ -36,7 +37,7 @@ module Mmpi
     end
 
     def scale_k_value(scale_k)
-      @scale_k_value = scale_k.send('co')
+      @scale_k_value = scale_k.co
     end
 
     def co

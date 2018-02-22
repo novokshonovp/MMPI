@@ -1,4 +1,4 @@
-require_relative 'scales'
+require_relative 'scale'
 require 'yaml'
 module Mmpi
   class Result

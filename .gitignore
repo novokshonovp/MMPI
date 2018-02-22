@@ -51,3 +51,4 @@ build-iPhoneSimulator/
 
 demo.rb
 .byebug_history
+rebuild_gem
