@@ -7,10 +7,7 @@ module Mmpi
     def initialize(answers, gender)
       @answers = answers
       @keys = YAML.load_file(Consts::PATH_TO_KEYS)
-      @scales = { Scale_l => nil, Scale_f => nil, Scale_k => nil,
-                  Scale_1 => nil, Scale_2 => nil, Scale_3 => nil, Scale_4 => nil,
-                  Scale_5 => nil, Scale_6 => nil, Scale_7 => nil, Scale_8 => nil,
-                  Scale_9 => nil, Scale_0 => nil }
+      @scales = Scale::SUPPORTED_SCALES.map { |klass| [klass, nil] }.to_h
       @scales.each_key do |scale|
         scales[scale] = scale.new(@keys, answers, gender)
       end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mmpi (0.1.0)
+    mmpi (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -36,8 +36,8 @@ DEPENDENCIES
   bundler (~> 1.16)
   mmpi!
   rake (~> 10.0)
-  rspec (~> 3.7.0)
-  simplecov (~> 0.15.1)
+  rspec (~> 3.7)
+  simplecov (~> 0.15)
 
 BUNDLED WITH
    1.16.1

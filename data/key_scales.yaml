@@ -1,4 +1,11 @@
 ---
+:Scale_q:
+  :true: []
+  :false: []
+  :dnk: !ruby/range
+    begin: 1
+    end: 566
+    excl: false
 :Scale_l:
   :true: []
   :false:

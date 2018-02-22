@@ -1,4 +1,5 @@
 require_relative 'scale'
+require_relative 'scale_q'
 require_relative 'scale_l'
 require_relative 'scale_f'
 require_relative 'scale_k'

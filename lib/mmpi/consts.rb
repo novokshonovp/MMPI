@@ -1,5 +1,6 @@
 module Consts
-  AVERAGE_DEVIATIONS = { male: { Scale_l: { median: 4.2, sigma: 2.9 },
+  AVERAGE_DEVIATIONS = { male: {
+                                Scale_l: { median: 4.2, sigma: 2.9 },
                                 Scale_f: { median: 2.76, sigma: 4.67 },
                                 Scale_k: { median: 12.1, sigma: 5.4 },
                                 Scale_1: { median: 11.1, sigma: 3.9 },

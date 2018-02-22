@@ -2,7 +2,9 @@ require 'yaml'
 module Mmpi
   class Scale
     Dir['./lib/mmpi/scale_*.rb'].each { |file| require file }
-
+    SUPPORTED_SCALES = [Scale_q, Scale_l, Scale_f, Scale_k, Scale_1, Scale_2,
+                        Scale_3, Scale_4, Scale_5, Scale_6, Scale_7, Scale_8,
+                        Scale_9, Scale_0]
     attr_accessor :scale_k_value
     def initialize(keys, answers, gender)
       @scale_k_value = 0
@@ -37,11 +39,11 @@ module Mmpi
       @scale_k_value = scale_k.send('co')
     end
 
-    private
-
     def co
       significant_answers
     end
+
+    private
 
     def self.concises
       @concises ||= YAML.load_file(Consts::PATH_TO_CONCISE)[to_sym]
@@ -56,7 +58,9 @@ module Mmpi
                    .count
       false_count = (@answers.select { |_q_num, answer| answer == false }.keys & @keys[:false])
                     .count
-      true_count + false_count
+      dnk_count = (@answers.select { |_q_num, answer| answer == 'dnk' }.keys & @keys[:dnk].to_a)
+                    .count
+      true_count + false_count + dnk_count
     end
 
     def k_correction
