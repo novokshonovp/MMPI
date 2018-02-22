@@ -1,8 +1,7 @@
 require 'yaml'
 module Mmpi
   class Scale
-    Dir['./lib/mmpi/scale_*.rb'].each { |file| require file }
-
+    require_relative 'scales'
     SUPPORTED_SCALES = [Scale_q, Scale_l, Scale_f, Scale_k, Scale_1, Scale_2,
                         Scale_3, Scale_4, Scale_5, Scale_6, Scale_7, Scale_8,
                         Scale_9, Scale_0].freeze
