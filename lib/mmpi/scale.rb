@@ -54,7 +54,7 @@ module Mmpi
     end
 
     def significant_answers
-      true_count = (@answers.select { |_q_num, answer| answer == true }.keys & @keys[:true])
+      true_count = (@answers.select { |_q_num, answer| answer == true || answer == 'dnk'}.keys & @keys[:true])
                    .count
       false_count = (@answers.select { |_q_num, answer| answer == false }.keys & @keys[:false])
                     .count
