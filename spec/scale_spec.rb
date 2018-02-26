@@ -6,11 +6,10 @@ require 'yaml'
 include Mmpi
 describe Scale do
   before do
-    scales.each { |scale, object| scales[scale] = scale.new(keys, answers, gender) }
-    scales.values.each { |object| object.scale_k_value(scales[Scale_k]) }
+    scales.each { |scale, object| scales[scale] = scale.new(scales, keys, answers, gender) }
   end
   let(:keys) { YAML.load_file('./spec/fixtures/key_scales.yaml') }
-  let(:scales) { {Scale_l => nil,Scale_f => nil,Scale_k => nil,
+  let(:scales) { {Scale_q=> nil, Scale_l => nil,Scale_f => nil,Scale_k => nil,
             Scale_1 => nil,Scale_2 => nil,Scale_3 => nil,Scale_4 => nil,
             Scale_5 => nil,Scale_6 => nil,Scale_7 => nil,Scale_8 => nil,
             Scale_9 => nil,Scale_0 => nil } }
@@ -51,7 +50,7 @@ describe Scale do
                           269=>true, 275=>true, 286=>true, 291=>true, 293=>true,    17=>true, 20=>true, 54=>true, 65=>true, 75=>true, 83=>true, 112=>true, 113=>true, 115=>true,
                           164=>true, 169=>true, 177=>true, 185=>true, 196=>true, 199=>true, 220=>true, 257=>true, 258=>true, 272=>true, 276=>true } }
         subject { scales[Scale_f].t_grade }
-        it { is_expected.to eq 138 }
+        it { is_expected.to eq 136 }
       end
     end
 

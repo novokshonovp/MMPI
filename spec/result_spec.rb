@@ -25,4 +25,16 @@ describe Result do
       it { is_expected.to eq({:Scale_l=>50, :Scale_f=>45, :Scale_k=>60, :Scale_1=>47, :Scale_2=>45, :Scale_3=>47, :Scale_4=>62, :Scale_5=>57, :Scale_6=>64, :Scale_7=>57, :Scale_8=>60, :Scale_9=>66, :Scale_0=>55}) }
     end
   end
+
+  describe '#is_reliable' do
+    subject { result.is_reliable? }
+    context 'when reliable' do
+      let(:answers) { Answers.reliable }
+      it { is_expected.to be true }
+    end
+    context 'when not reliable' do
+      let(:answers) { Answers.all_false }
+      it { is_expected.to be false}
+    end
+  end
 end

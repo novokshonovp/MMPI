@@ -1,4 +1,11 @@
 ---
+:Scale_q:
+  :true: []
+  :false: []
+  :dnk: !ruby/range
+    begin: 1
+    end: 566
+    excl: false
 :Scale_l:
   :true: []
   :false:
@@ -19,10 +26,11 @@
   - 285
 :Scale_f:
   :true:
-  - 4
+  - 14
   - 23
   - 27
   - 31
+  - 33
   - 34
   - 35
   - 40
@@ -538,7 +546,6 @@
   - 352
   - 356
   - 357
-  - 358
   - 359
   - 360
   - 361
