@@ -16,7 +16,8 @@ module Mmpi
     def t_grade
       median = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:median]
       sigma = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:sigma]
-      (50 + (10 * (co_corrected_with_k.to_f - median) / sigma)).round
+      @gender == :male ? (50 + (10 * (co_corrected_with_k.to_f - median) / sigma)).round :
+                         (50 + (10 * (co_corrected_with_k.to_f - median) / sigma).abs).round
     end
 
     def concise_interpretation(grade)
@@ -53,13 +54,11 @@ module Mmpi
     end
 
     def significant_answers
-      true_count = (@answers.select { |_q_num, answer| answer == true || answer == 'dnk'}.keys & @keys[:true])
+      true_count = (@answers.select { |_q_num, answer| answer == true }.keys & @keys[:true])
                    .count
       false_count = (@answers.select { |_q_num, answer| answer == false }.keys & @keys[:false])
                     .count
-      dnk_count = (@answers.select { |_q_num, answer| answer == 'dnk' }.keys & @keys[:dnk].to_a)
-                    .count
-      true_count + false_count + dnk_count
+      true_count + false_count
     end
 
     def k_correction

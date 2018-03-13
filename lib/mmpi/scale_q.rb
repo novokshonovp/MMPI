@@ -12,6 +12,9 @@ module Mmpi
     def t_grade
       0
     end
-    
+    def significant_answers
+      (@answers.select { |_q_num, answer| answer == 'dnk' }.keys & @keys[:dnk].to_a)
+               .count
+    end
   end
 end
