@@ -1,20 +1,29 @@
 module Mmpi
   class Scale_q < Scale
-
     def concise_interpretation
-      super(co)
+      result = 'Шкала "?": '
+      result << case co
+                when 24..40
+                  'допустимый результат.'
+                when 41..60
+                  'выраженная настороженность обследуемого.'
+                else
+                  'данные теста недостоверны.'
+                end
+      result
     end
 
-    def is_reliable?
-      co > 70 ? false : true
+    def reliable?
+      co >= 24 && co <= 60 ? true : false
     end
 
     def t_grade
       0
     end
+
     def significant_answers
       (@answers.select { |_q_num, answer| answer == 'dnk' }.keys & @keys[:dnk].to_a)
-               .count
+        .count
     end
   end
 end

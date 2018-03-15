@@ -30,9 +30,13 @@ module Mmpi
       end.to_h
     end
 
-    def is_reliable?
-      !@scales.any? { |_klass, scale|  scale.is_reliable? == false if scale.respond_to?('is_reliable?') }
+    def reliable?
+      return false if welsh_index.abs > 11
+      !@scales.any? { |_klass, scale|  scale.reliable? == false if scale.respond_to?('reliable?') }
     end
 
+    def welsh_index
+      @scales[Scale_f].co - @scales[Scale_k].co
+    end
   end
 end

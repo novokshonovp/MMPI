@@ -26,8 +26,8 @@ describe Result do
     end
   end
 
-  describe '#is_reliable' do
-    subject { result.is_reliable? }
+  describe '#reliable?' do
+    subject { result.reliable? }
     context 'when reliable' do
       let(:answers) { Answers.reliable }
       it { is_expected.to be true }

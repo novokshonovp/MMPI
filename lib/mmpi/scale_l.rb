@@ -4,7 +4,7 @@ module Mmpi
       super(t_grade)
     end
 
-    def is_reliable?
+    def reliable?
       t_grade > 70 ? false : true
     end
   end

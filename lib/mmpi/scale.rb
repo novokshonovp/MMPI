@@ -37,7 +37,7 @@ module Mmpi
     end
 
     private
-    
+
     def forward_grade
       median = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:median]
       sigma = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:sigma]
