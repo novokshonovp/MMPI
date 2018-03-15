@@ -14,10 +14,7 @@ module Mmpi
     end
 
     def t_grade
-      median = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:median]
-      sigma = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:sigma]
-      @gender == :male ? (50 + (10 * (co_corrected_with_k.to_f - median) / sigma)).round :
-                         (50 + (10 * (co_corrected_with_k.to_f - median) / sigma).abs).round
+      forward_grade
     end
 
     def concise_interpretation(grade)
@@ -40,6 +37,18 @@ module Mmpi
     end
 
     private
+    
+    def forward_grade
+      median = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:median]
+      sigma = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:sigma]
+      (50 + (10 * (co_corrected_with_k.to_f - median) / sigma)).round
+    end
+
+    def backward_grade
+      median = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:median]
+      sigma = Consts::AVERAGE_DEVIATIONS[@gender][self.class.to_sym][:sigma]
+      (50 + (10 * (co_corrected_with_k.to_f - median) / sigma).abs).round
+    end
 
     def scale_k_value
       @scales[Scale_k].co
