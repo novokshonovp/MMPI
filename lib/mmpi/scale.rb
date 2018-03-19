@@ -5,6 +5,8 @@ module Mmpi
     SUPPORTED_SCALES = [Scale_q, Scale_l, Scale_f, Scale_k, Scale_1, Scale_2,
                         Scale_3, Scale_4, Scale_5, Scale_6, Scale_7, Scale_8,
                         Scale_9, Scale_0].freeze
+    BASE_SCALES = [Scale_1, Scale_2, Scale_3, Scale_4, Scale_5, Scale_6, Scale_7,
+                   Scale_8, Scale_9, Scale_0].freeze
     def initialize(scales, keys, answers, gender)
       @scales = scales
       @answers = answers
@@ -17,13 +19,6 @@ module Mmpi
       forward_grade
     end
 
-    def concise_interpretation(grade)
-      return if self.class.conclusions.nil?
-      concise = self.class.conclusions.detect { |range, _value| (range.cover?(grade)) }
-      raise "#{Consts::PATH_TO_CONCISE} damaged !!!" if concise.nil?
-      concise.last
-    end
-
     def self.to_sym
       name.split('::').last.to_sym
     end
@@ -34,6 +29,10 @@ module Mmpi
 
     def inspect
       "#<#{self.class.name}:#{object_id}, co: (#{co})"
+    end
+
+    def self.conclusions
+      @conclusions ||= YAML.load_file(Consts::PATH_TO_CONCISE)
     end
 
     private
@@ -54,10 +53,6 @@ module Mmpi
       @scales[Scale_k].co
     end
 
-    def self.conclusions
-      @conclusions ||= YAML.load_file(Consts::PATH_TO_CONCISE)[to_sym]
-    end
-
     def co_corrected_with_k
       co + (scale_k_value.to_f * (k_correction || 0)).round
     end
@@ -72,6 +67,33 @@ module Mmpi
 
     def k_correction
       Consts::CORRECTIONS[self.class.to_sym]
+    end
+
+    def base_scales
+      @scales.select { |klass, _object| BASE_SCALES.include?(klass) }
+    end
+
+    def all_t_grades_without_self
+      base_scales.reject { |klass, _object| klass == self.class }
+                 .map { |_klass, object| object.t_grade }
+    end
+
+    def all_t_grades_without_self_in(range)
+      all_t_grades_without_self.all? { |t_grade| range.cover?(t_grade) }
+    end
+
+    def all_t_grades
+      base_scales.map { |_klass, object| object.t_grade }
+    end
+
+    def all_t_grades_in(range)
+      all_t_grades.all? { |t_grade| range.cover?(t_grade) }
+    end
+
+    def interpretations_by_range
+      Scale.conclusions[self.class.to_sym][:ranges]
+           .map { |range, data| [data] if range.cover?(t_grade) }
+           .compact
     end
   end
 end
