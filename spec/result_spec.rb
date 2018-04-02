@@ -5,8 +5,17 @@ require 'answers_templates'
 require 'yaml'
 
 include Mmpi
+
+class DummyTest
+  attr_accessor :answers, :gender
+  def initialize(answers, gender)
+    @answers = answers
+    @gender = gender
+  end
+end
+
 describe Result do
-  let(:result) { Result.new(answers, :male) }
+  let(:result) { Result.new(DummyTest.new(answers, :male)) }
   let(:answers) { Answers.all_truth }
   describe '#graph_parity' do
     subject { result.graph_parity }

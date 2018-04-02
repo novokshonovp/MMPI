@@ -3,12 +3,12 @@ require 'yaml'
 module Mmpi
   class Result
     attr_reader :scales
-    def initialize(answers, gender)
-      @answers = answers
+    def initialize(test)
+      @test = test
       @keys = YAML.load_file(Consts::PATH_TO_KEYS)
       @scales = Scale::SUPPORTED_SCALES.map { |klass| [klass, nil] }.to_h
       @scales.each_key do |scale|
-        scales[scale] = scale.new(@scales, @keys, answers, gender)
+        scales[scale] = scale.new(@scales, @keys, @test.answers, @test.gender)
       end
       @g_templates = YAML.load_file(Consts::PATH_TO_GRAPH_TEMPLATES)
     end
