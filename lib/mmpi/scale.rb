@@ -91,6 +91,7 @@ module Mmpi
     end
 
     def interpretations_by_range
+      raise 'Damaged conclusions file!' if Scale.conclusions[self.class.to_sym].nil?
       Scale.conclusions[self.class.to_sym][:ranges]
            .map { |range, data| [data] if range.cover?(t_grade) }
            .compact

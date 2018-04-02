@@ -5,10 +5,11 @@ module Mmpi
   class Test
     DATA_STRUCTURE = %i[number question].freeze
 
-    attr_reader :quiz, :gender
-    def initialize(gender, path)
+    attr_reader :quiz, :gender, :additional_data
+    def initialize(gender, path, additional_data= {firstname: 'anonymous', age: 20, grade: 'level_1'})
       @quiz = {}
       @gender = gender
+      @additional_data = additional_data
       file = File.open(path).read
       @quiz = CSV.parse(file, col_sep: '|', headers: DATA_STRUCTURE)
                    .map do |quiz_fizture|
