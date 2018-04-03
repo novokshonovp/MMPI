@@ -38,6 +38,21 @@ module Mmpi
       @quiz.map { |key, value| [key.to_i,value[:answer]]}.to_h
     end
 
+    def age
+        return if @additional_data.nil?
+        return if @additional_data[:age].nil?
+        suffix = ''
+        case (@additional_data[:age].to_i % 10)
+          when 1
+            suffix = 'год'
+          when 2..4
+            suffix = 'года'
+          else
+            suffix = 'лет'
+        end
+        "#{@additional_data[:age]} #{suffix}"
+    end
+
     private
 
     def unfinished

@@ -45,5 +45,11 @@ describe Test do
       it { is_expected.to eq ( {14=>true} ) }
     end
 
+    describe '#age' do  
+      let(:test) { Test.new(:men, path_to_mmpi_men_csv, { age:'22'} ) }
+      subject { test.age }
+      it { is_expected.to eq('22 года') }
+    end
+
   end
 end

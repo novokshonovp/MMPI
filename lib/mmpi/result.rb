@@ -2,7 +2,7 @@ require_relative 'scale'
 require 'yaml'
 module Mmpi
   class Result
-    attr_reader :scales
+    attr_reader :scales, :test
     def initialize(test)
       @test = test
       @keys = YAML.load_file(Consts::PATH_TO_KEYS)
