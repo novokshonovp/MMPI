@@ -1,7 +1,8 @@
 module Mmpi
   class Scale_l < Scale
     def concise_interpretation
-      super(t_grade)
+      ''
+      # TODO: create interpolation
     end
 
     def reliable?
